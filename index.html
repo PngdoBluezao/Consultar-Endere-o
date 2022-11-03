@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        transition: all 500ms;
+      }
+
+      input {
+        width: 100% !important;
+        display: block !important;
+        padding: 0.75rem !important;
+        border-radius: 8px !important;
+        outline-color: transparent;
+        outline-width: 1px !important;
+      }
+
+      input:focus {
+        outline-color: #9333ea;
+      }
+      :disabled {
+        background-color: #ddd;
+        color: #9333ea !important;
+      }
+      label {
+        display: block;
+        padding: 0.5rem 0;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="flex flex-col border border-purple-600 rounded-lg w-10/12 p-8">
+      <h1 class="text-center font-semibold text-xl">Consultar Endereço</h1>
+        <!-- Inicio do formulário -->
+
+      <form class="w-full">
+        <div class="flex flex-col items-start justify-center">
+          <label for="cep">CEP</label>
+          <div class="w-full flex gap-2">
+            <input id="cep" maxlength ="8" type="text" name="cep" placeholder="00000-000" />
+            <button id="btnSearch"
+              class="bg-purple-600 p-2 rounded-lg text-white hover:bg-purple-800"
+            >
+              <i data-feather="search"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="logradouro" >Logradouro</label>
+          <input
+            id="logradouro"
+            type="text"
+            name="logradouro"
+            placeholder="Rua dos bobos"
+            disabled
+          />
+        </div>
+
+        <div>
+          <label for="bairro">Bairro</label>
+          <input type="text"  id="bairro" name="bairro" placeholder="Centro" disabled />
+        </div>
+        <div>
+          <label for="localidade" >Localidade</label>
+          <input
+          id="localidade"
+            type="text"
+            name="localidade"
+            placeholder="Rio de Janeiro"
+            disabled
+          />
+        </div>
+
+        <div>
+          <label for="uf">UF</label>
+          <input type="text" name="uf" id="uf" placeholder="RJ" disabled />
+        </div>
+      </form>
+      <!-- Fim do formulário -->
+    </div>
+    <script>
+      feather.replace();
+    </script>
+    <script src="functions.js"></script>
+  </body>
+</html>
